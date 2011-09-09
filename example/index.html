@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+	<script type="text/javascript" src="../daterange.jquery.js"></script>
+	<style type="text/css">
+	/* Calendar */
+	#calendar { position: absolute; z-index: 2; top: 124px; right: 10px; background-color: rgba(255,255,255,.7); width: 280px; }
+		#calendar table { width: 280px; color: #000; }
+			#calendar table tr { text-align: center; }
+			#calendar table td { padding: 4px; }
+
+				#calendar table td:hover, #calendar table td.start, #calendar table td.end { color: #fff; font-weight: bold; cursor: pointer; }
+				#calendar table td:hover { background-color: #999; }
+				#calendar table td.start { background-color: #008ff8; }
+				#calendar table td.end { background-color: #e34349; }
+				#calendar table td.month:hover { background-color: transparent; color: #000; font-weight: normal; cursor: default; }
+
+		#calendar button { cursor: pointer; }
+		#calendar #daterange #prev { float: left; }
+		#calendar #daterange #next { float: right; }
+		blockquote { font-size: 12px; color: #575757; text-align: left; text-indent: 5px; text-shadow: 0 1px rgba(255,255,255,.67); }
+	</style>
+</head>
+<html>
+<body>
+	<blockquote id="range">
+		<span id="start"></span> - 
+		<span id="end"></span>
+	</blockquote>
+	<div id="calendar">
+		<div id="daterange">
+			<button id="prev">PREV</button>
+			<button id="next">NEXT</button>
+			<div id="select"></div>
+			<form accept-charset="UTF-8" id="form" method="post">
+				<input type="hidden" name="date_low" />
+				<input type="hidden" name="date_high" />
+			</form>
+		</div>
+	</div>
+<script>
+$('#select').range();
+// $('#select').range([2011,9,8]);
+</script>
+</body>
+</html>
